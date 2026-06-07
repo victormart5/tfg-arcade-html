@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación - Snake Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="detalle-container">
+        <a href="index.html" class="btn-volver">← Volver al menú principal</a>
+        <h1>SNAKE: EL LABERINTO INFINITO</h1>
+
+        <section class="galeria-fotos">
+            <div class="grid-fotos">
+                <img src="img/imgSnake1.png" alt="Snake 1" class="foto-galeria">
+                <img src="img/imgSnake2.png" alt="Snake 2" class="foto-galeria">
+            </div>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Origen e Historia</h3>
+            <p>El concepto nació en <strong>1976</strong> con el juego arcade <em>Blockade</em>. Sin embargo, alcanzó la fama mundial en <strong>1998</strong> al ser incluido en los teléfonos Nokia, convirtiéndose en un icono de la cultura pop.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>¿De qué trata?</h3>
+            <p>El jugador guía a una criatura que crece cada vez que consume alimento. El desafío principal es el espacio: a medida que la serpiente crece, el área de maniobra disminuye drásticamente.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Dificultad Progresiva</h3>
+            <p><strong>Nivel: Medio.</strong> En este desarrollo, la dificultad aumenta mediante el **incremento de la velocidad del Timer**. Cuanto más larga es la serpiente, menos milisegundos de espera hay entre cada movimiento, exigiendo reflejos mucho más rápidos.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Detalle Técnico (DAM)</h3>
+            <p>Se gestiona mediante una <code>LinkedList</code> de coordenadas. La colisión se detecta comparando la posición de la "cabeza" con el resto de los nodos del cuerpo.</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación - Tetris Classic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="detalle-container">
+        <a href="index.html" class="btn-volver">← Volver al menú principal</a>
+        <h1>TETRIS: INGENIERÍA SOVIÉTICA</h1>
+
+        <section class="galeria-fotos">
+            <div class="grid-fotos">
+                <img src="img/imgTetris1.png" alt="Tetris 1" class="foto-galeria">
+                <img src="img/imgTetris2.png" alt="Tetris 2" class="foto-galeria">
+            </div>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Origen e Historia</h3>
+            <p>Diseñado por Alekséi Pázhitnov en la Unión Soviética en <strong>1984</strong>. El nombre proviene de "tetra" (cuatro) y "tenis" (el deporte favorito del creador).</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>¿De qué trata?</h3>
+            <p>Consiste en encajar figuras geométricas compuestas por cuatro bloques que caen. Al completar una línea horizontal, esta se elimina y otorga puntos, evitando que la pantalla se llene.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Dificultad Progresiva</h3>
+            <p><strong>Nivel: Alto.</strong> La dificultad se gestiona por niveles. Cada 10 líneas completadas, se incrementa el nivel, lo que reduce drásticamente el tiempo de caída de las piezas, dejando al jugador sin tiempo para pensar la rotación.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Detalle Técnico (DAM)</h3>
+            <p>Usa una matriz de <code>int[row][col]</code>. La rotación es el reto principal, aplicando una operación matemática de intercambio de índices para girar la pieza sobre su eje central.</p>
+        </section>
+    </div>
+</body>
+</html>
