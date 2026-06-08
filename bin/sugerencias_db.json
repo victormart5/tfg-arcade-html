@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "69dca364f162d9aed46c5b34"
+  },
+  "usuario": "Jorge",
+  "comentario": "La app esta de 10",
+  "fecha": {
+    "$date": "2026-04-13T08:03:48.420Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69dca39df162d9aed46c5b35"
+  },
+  "usuario": "Victor",
+  "comentario": "La app esta perfecta",
+  "fecha": {
+    "$date": "2026-04-13T08:04:45.789Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69dcc27b4680292ae9834ad6"
+  },
+  "usuario": "Almeja",
+  "comentario": "1234",
+  "fecha": {
+    "$date": "2026-04-13T10:16:27.090Z"
+  },
+  "__v": 0
+}]

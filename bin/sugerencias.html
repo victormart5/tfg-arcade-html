@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buzón de Sugerencias - Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="detalle-container">
+        <a href="index.html" class="btn-volver">← Volver al menú</a>
+        <h1>BUZÓN DE SUGERENCIAS</h1>
+
+        <div class="form-sugerencia" style="display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" id="nombre" placeholder="Tu apodo..." class="input-sugerencia">
+            
+            <textarea id="texto" placeholder="Escribe aquí tu mejora..." class="input-sugerencia" style="height: 100px; resize: none;"></textarea>
+            
+            <button onclick="enviarSugerencia()" class="btn-download-main">PUBLICAR SUGERENCIA</button>
+        </div>
+
+        <hr class="divisor">
+
+        <div id="lista-comentarios"></div>
+    </div>
+
+    <script>
+        // Dirección de tu servidor Node.js
+        const API_URL = "http://localhost:3000/api/sugerencias";
+
+        // Función para cargar los comentarios desde el servidor
+        async function cargar() {
+            try {
+                const res = await fetch(API_URL);
+                const datos = await res.json();
+                
+                const lista = document.getElementById('lista-comentarios');
+                
+                if (datos.length === 0) {
+                    lista.innerHTML = "<p style='color: #444; text-align: center;'>Aún no hay sugerencias. ¡Sé el primero!</p>";
+                    return;
+                }
+
+                lista.innerHTML = datos.map(s => `
+                    <div>
+                        <b style="color: #00ffff;">${s.usuario}</b> 
+                        <span style="color: #555; font-size: 0.8rem;"> - ${new Date(s.fecha).toLocaleString()}</span>
+                        <p style="margin-top: 10px; color: #ccc; line-height: 1.5;">${s.comentario}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error("Error al cargar comentarios:", error);
+            }
+        }
+
+        // Función para enviar una nueva sugerencia
+        async function enviarSugerencia() {
+            const usuarioInput = document.getElementById('nombre');
+            const comentarioInput = document.getElementById('texto');
+
+            const usuario = usuarioInput.value.trim();
+            const comentario = comentarioInput.value.trim();
+
+            if(!usuario || !comentario) {
+                alert("Por favor, rellena ambos campos antes de publicar.");
+                return;
+            }
+
+            try {
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ usuario, comentario })
+                });
+
+                // Limpiar el campo de texto pero mantener el nombre para comodidad
+                comentarioInput.value = "";
+                
+                // Refrescar la lista
+                cargar();
+            } catch (error) {
+                alert("Error al conectar con el servidor. Asegúrate de que 'node server.js' está corriendo.");
+            }
+        }
+
+        // Cargar los comentarios nada más entrar en la página
+        cargar();
+    </script>
+</body>
+</html>
