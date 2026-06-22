@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación - Catch Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="detalle-container">
+        <a href="index.html" class="btn-volver">← Volver al menú principal</a>
+        <h1>CATCH GAME: REFLEJOS FRUTALES</h1>
+
+        <section class="galeria-fotos">
+            <div class="grid-fotos">
+                <img src="img/imagencatch2.png" alt="Catch Game Screenshot" class="foto-galeria">
+                <img src="img/imagencatch3.png" alt="Catch Game Fruits Asset 1" class="foto-galeria">
+                <img src="img/imagencatch4.png" alt="Catch Game Fruits Asset 2" class="foto-galeria">
+            </div>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Origen del Desarrollo</h3>
+            <p>Nacido de nuestro deseo de crear un juego de arcade de estilo clásico con mecánicas adictivas, el desarrollo de Catch Game se centró en la generación procedural y la física dinámica. Este proyecto forma parte del pack de juegos que hemos recreado desde cero en Java para rescatar la esencia de los clásicos de los 80.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>¿De qué trata?</h3>
+            <p>El objetivo es mover el cubo situado en la parte inferior de la pantalla para atrapar las frutas que caen de forma procedural. Cada fruta recogida suma puntos al marcador del jugador. Sin embargo, el jugador debe evitar a toda costa las bombas mimetizadas con las frutas; atrapar una bomba o dejar caer tres frutas hará que el jugador pierda una de sus vidas.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Dificultad Dinámica</h3>
+            <p><strong>Nivel: Escalable (Progresivo).</strong> Hemos implementado un vector de gravedad iterativo. A medida que aumenta la puntuación del jugador, las frutas caen más rápido y las bombas aparecen con más frecuencia, desafiando los reflejos y la agilidad visual del jugador en una carrera contra el tiempo.</p>
+        </section>
+
+        <section class="seccion-texto">
+            <h3>Detalle Técnico (DAM)</h3>
+            <p>A nivel de código, hemos empleado programación orientada a objetos para manejar las distintas entidades asíncronas. La generación procedural se gestiona mediante un <code>javax.swing.Timer</code>, creando una nueva entidad de fruta o bomba a intervalos regulares. Utilizamos la intersección de *hitboxes* de tipo <code>Rectangle</code> para la detección de colisiones.</p>
+        </section>
+    </div>
+</body>
+</html>
